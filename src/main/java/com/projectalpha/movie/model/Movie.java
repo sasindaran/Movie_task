@@ -4,7 +4,6 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class Movie {
 
@@ -15,5 +14,18 @@ public class Movie {
 
     @NotBlank(message = "Description cannot be empty")
     private String description;
+
+    // Constructor without id (for POST requests)
+    public Movie(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    // Constructor with id (for repository initialization)
+    public Movie(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
 
 }
