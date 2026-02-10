@@ -4,8 +4,8 @@ import com.projectalpha.movie.model.Movie;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class MovieRepository {
@@ -13,7 +13,7 @@ public class MovieRepository {
     private final List<Movie> movies = new ArrayList<>();
     private int idCounter = 1;
 
-    //Dummy data
+    // Dummy data
     public MovieRepository() {
         movies.add(new Movie(idCounter++, "Inception", "Sci-fi thriller by Christopher Nolan"));
         movies.add(new Movie(idCounter++, "Interstellar", "Space exploration and time dilation"));
@@ -28,16 +28,16 @@ public class MovieRepository {
     }
 
     // Find movie by ID (READ)
-    public Movie findById(int id) {
+    public Optional<Movie> findById(int id) {
         for (Movie movie : movies) {
             if (movie.getId() == id) {
-                return movie;
+                return Optional.of(movie);
             }
         }
-        return null;
+        return Optional.empty();
     }
 
-   // Get all movies (READ)
+    // Get all movies (READ)
     public List<Movie> findAll() {
         return movies;
     }
@@ -56,6 +56,6 @@ public class MovieRepository {
 
     // DELETE
     public boolean deleteById(int id) {
-       return movies.removeIf(movie -> movie.getId() == id);
+        return movies.removeIf(movie -> movie.getId() == id);
     }
 }

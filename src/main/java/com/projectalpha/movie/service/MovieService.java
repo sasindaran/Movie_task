@@ -5,6 +5,7 @@ import com.projectalpha.movie.repository.MovieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MovieService {
@@ -21,7 +22,7 @@ public class MovieService {
     }
 
     // READ by ID
-    public Movie getMovieById(int id) {
+    public Optional<Movie> getMovieById(int id) {
         return movieRepository.findById(id);
     }
 
