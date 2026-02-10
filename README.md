@@ -13,7 +13,7 @@ Simple REST API for managing movies with in-memory storage.
 mvn spring-boot:run
 ```
 
-Application starts on `http://localhost:8080`
+Application starts on `https://movie-task-f8tf.onrender.com/`
 
 ## API Endpoints
 
@@ -73,15 +73,15 @@ Response: 200 OK or 404 Not Found
 
 ### Get All Movies
 - Method: `GET`
-- URL: `http://localhost:8080/movies`
+- URL: `https://movie-task-f8tf.onrender.com//movies`
 
 ### Get Movie by ID
 - Method: `GET`
-- URL: `http://localhost:8080/movies/1`
+- URL: `https://movie-task-f8tf.onrender.com//movies/1`
 
 ### Add New Movie
 - Method: `POST`
-- URL: `http://localhost:8080/movies`
+- URL: `https://movie-task-f8tf.onrender.com//movies`
 - Headers: `Content-Type: application/json`
 - Body (raw JSON):
 ```json
@@ -93,7 +93,7 @@ Response: 200 OK or 404 Not Found
 
 ### Update Movie
 - Method: `PUT`
-- URL: `http://localhost:8080/movies/1`
+- URL: `https://movie-task-f8tf.onrender.com//movies/1`
 - Headers: `Content-Type: application/json`
 - Body (raw JSON):
 ```json
@@ -105,7 +105,7 @@ Response: 200 OK or 404 Not Found
 
 ### Delete Movie
 - Method: `DELETE`
-- URL: `http://localhost:8080/movies/1`
+- URL: `https://movie-task-f8tf.onrender.com//movies/1`
 
 ## Implementation
 
